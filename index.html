@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job application</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+           font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+<body class=" bg-base-200">
+    <header class="w-10/12 mx-auto pt-10">
+         <Section class="pb-10 border-b-2 border-gray-400">
+             <h1 class="text-4xl font-bold mb-6">Job Applicant Tracker</h1>
+             <div class="flex gap-8 ">
+                <div class="bg-white p-8  w-[350px]">
+                    <p class="font-medium">Total</p>
+                    <p id="total" class="font-bold text-2xl">0</p>
+                </div>
+                <div class="bg-white p-6 w-[350px]">
+                    <p class="font-medium">Interview</p>
+                    <p id="interview-number" class="font-bold text-2xl text-green-500">0</p>
+                </div>
+                <div class="bg-white p-6 w-[350px]">
+                    <p class="font-medium">Rejected</p>
+                    <p id="rejected-number" class="font-bold text-2xl text-red-500">0</p>
+                </div>
+                
+             </div>
+         </Section>
+    </header>
+    <main class="w-10/12 mx-auto pt-15 pb-15">
+        <section class="pb-8">
+            <div class="flex justify-between">
+            <div>
+            <h2 class="text-3xl font-bold mb-5">Available Jobs</h2>
+            
+               <button id="btn-all" class="btn btn-primary btn-soft ">All</button>
+               <button id="btn-interview" class="btn btn-primary btn-soft">Interview</button>
+               <button id="btn-rejected" class="btn btn-primary btn-soft">Rejected</button>
+            </div>
+            <p class="font-medium"><span id="checking-number" class="font-medium">0</span> jobs</p>
+            </div>
+        </section>
+
+        <section id="allcardsection">
+            <div  class=" bg-white p-6 flex justify-between mb-5">
+                <div >
+                    <h2 class="mobile text-2xl font-semibold mb-1">Mobile First Crop</h2>
+                    <p class="dev text-gray-500">React Native Developar</p>
+                    <div class="flex gap-2 text-gray-500 my-4">
+                        <p class="remote">Remote</p>
+                        <p class="full">. Full Time</p>
+                        <p class="salary">. $130,000-$175,000</p>
+                    </div>
+                    <p class="app  bg-sky-100 w-35 p-1.5 rounded-lg text-center font-medium text-lg">NOT APPLIED</p>
+                    <p class="build text-gray-500 pt-2 pb-4">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <button  class="btn btn-success btn-outline interview-btn">INTERVIEW</button>
+                    <button  class="btn btn-error btn-outline rejected-btn">REJECTED</button>
+                </div>
+                <p><i class="fa-regular fa-trash-can"></i></p>
+
+            </div>
+            <div  class="webflow bg-white p-6 flex justify-between mb-5">
+                <div >
+                    <h2 class="mobile text-2xl font-semibold mb-1">WebFlow Agency</h2>
+                    <p class="dev text-gray-500">Web Aesigner & Developar</p>
+                    <div class="flex gap-2 text-gray-500 my-4">
+                        <p class="remote">Los Angeles,CA</p>
+                        <p class="full">. Part Time</p>
+                        <p class="salary">. $80,000-$120,000</p>
+                    </div>
+                    <p class="app bg-sky-100 w-35 p-1.5 rounded-lg text-center font-medium text-lg">NOT APPLIED</p>
+                    <p class="build text-gray-500 pt-2 pb-4">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                    <button class="btn btn-success btn-outline interview-btn">INTERVIEW</button>
+                    <button  class="btn btn-error btn-outline rejected-btn">REJECTED</button>
+                </div>
+                <p><i class="fa-regular fa-trash-can"></i></p>
+
+            </div>
+            <div  class="dataviz bg-white p-6 flex justify-between mb-5">
+                <div >
+                    <h2 class="mobile text-2xl font-semibold mb-1">DataViz Solutions</h2>
+                    <p class="dev text-gray-500">Data Visualization Specialist</p>
+                    <div class="flex gap-2 text-gray-500 my-4">
+                        <p class="remote">Boston,MA</p>
+                        <p class="full">. Full Time</p>
+                        <p class="salary">. $125,000-$165,000</p>
+                    </div>
+                    <p class="app bg-sky-100 w-35 p-1.5 rounded-lg text-center font-medium text-lg">NOT APPLIED</p>
+                    <p class="build text-gray-500 pt-2 pb-4">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking</p>
+                    <button class="btn btn-success btn-outline interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error btn-outline rejected-btn">REJECTED</button>
+                </div>
+                <p><i class="fa-regular fa-trash-can"></i></p>
+
+            </div>
+            <div  class="cloud bg-white p-6 flex justify-between mb-5">
+                <div >
+                    <h2 class="mobile text-2xl font-semibold mb-1">CloudFirst Inc</h2>
+                    <p class="dev text-gray-500">Backend Developar</p>
+                    <div class="flex gap-2 text-gray-500 my-4">
+                        <p class="remote">Seattle,WA</p>
+                        <p class="full">. Full Time</p>
+                        <p class="salary">. $140,000-$190,000</p>
+                    </div>
+                    <p class="app bg-sky-100 w-35 p-1.5 rounded-lg text-center font-medium text-lg">NOT APPLIED</p>
+                    <p class="build text-gray-500 pt-2 pb-4">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                    <button class="btn btn-success btn-outline interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error btn-outline rejected-btn">REJECTED</button>
+                </div>
+                <p><i class="fa-regular fa-trash-can"></i></p>
+
+            </div>
+            <div  class="innovation bg-white p-6 flex justify-between mb-5">
+                <div >
+                    <h2 class="mobile text-2xl font-semibold mb-1">Innovation Labs</h2>
+                    <p class="dev text-gray-500">UI/UX Enginner</p>
+                    <div class="flex gap-2 text-gray-500 my-4">
+                        <p class="remote">Austine,TX</p>
+                        <p class="full">. Full Time</p>
+                        <p class="salary">. $110,000-$150,000</p>
+                    </div>
+                    <p class="app bg-sky-100 w-35 p-1.5 rounded-lg text-center font-medium text-lg">NOT APPLIED</p>
+                    <p class="build text-gray-500 pt-2 pb-4">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                    <button class="btn btn-success btn-outline interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error btn-outline rejected-btn">REJECTED</button>
+                </div>
+                <p><i class="fa-regular fa-trash-can"></i></p>
+
+            </div>
+            <div  class="megacrop bg-white p-6 flex justify-between mb-5">
+                <div >
+                    <h2 class="mobile text-2xl font-semibold mb-1">MegaCrop Solutions</h2>
+                    <p class="dev text-gray-500">JavaScript Developar</p>
+                    <div class="flex gap-2 text-gray-500 my-4">
+                        <p class="remote">New York,NY</p>
+                        <p class="full">. Full Time</p>
+                        <p class="salary">. $130,000-$170,000</p>
+                    </div>
+                    <p class="app bg-sky-100 w-35 p-1.5 rounded-lg text-center font-medium text-lg">NOT APPLIED</p>
+                    <p class="build text-gray-500 pt-2 pb-4">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+                    <button class="btn btn-success btn-outline interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error btn-outline rejected-btn">REJECTED</button>
+                </div>
+                <p><i class="fa-regular fa-trash-can"></i></p>
+
+            </div>
+            <div  class="startup bg-white p-6 flex justify-between mb-5">
+                <div >
+                    <h2 class="mobile text-2xl font-semibold mb-1">StartupXYZ</h2>
+                    <p class="dev text-gray-500">Full Stack Engineer</p>
+                    <div class="flex gap-2 text-gray-500 my-4">
+                        <p class="remote">Remote</p>
+                        <p class="full">. Full Time</p>
+                        <p class="salary">. $120,000-$160,000</p>
+                    </div>
+                    <p class="app bg-sky-100 w-35 p-1.5 rounded-lg text-center font-medium text-lg">NOT APPLIED</p>
+                    <p class="build text-gray-500 pt-2 pb-4">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+                    <button class="btn btn-success btn-outline interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error btn-outline rejected-btn">REJECTED</button>
+                </div>
+                <p><i class="fa-regular fa-trash-can"></i></p>
+
+            </div>
+            <div  class="tech bg-white p-6 flex justify-between mb-5">
+                <div >
+                    <h2 class="mobile text-2xl font-semibold mb-1">TechCrop Industries</h2>
+                    <p class="dev text-gray-500">Senior Frontend Developar</p>
+                    <div class="flex gap-2 text-gray-500 my-4">
+                        <p class="remote">San Francisco,CA</p>
+                        <p class="full">. Full Time</p>
+                        <p class="salary">. $130,000-$175,000</p>
+                    </div>
+                    <p class="app bg-sky-100 w-35 p-1.5 rounded-lg text-center font-medium text-lg">NOT APPLIED</p>
+                    <p class="build text-gray-500 pt-2 pb-4">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+                    <button class="btn btn-success btn-outline interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error btn-outline rejected-btn">REJECTED</button>
+                </div>
+                <p><i class="fa-regular fa-trash-can"></i></p>
+
+            </div>
+        </section>
+
+        <section id="interview" class="  hidden" >
+            <div  class="bg-white p-20 mb-3">
+            <img class="mx-auto mb-3" src="./jobs.png" alt="">
+            <h2 class="text-3xl font-bold text-center">No jobs available</h2>
+            <p class="text-center text-gray-500 mt-1">Check back soon for new job oppourunities</p>
+            </div>
+        </section>
+        <section id="rejected" class="hidden" >
+            <div  class=" bg-white p-20 mb-3">
+            <img class="mx-auto mb-3" src="./jobs.png" alt="">
+            <h2 class="text-3xl font-bold text-center">No jobs available</h2>
+            <p class="text-center text-gray-500 mt-1">Check back soon for new job oppourunities</p>
+            </div>
+        </section>
+
+
+
+        <script src="./index.js"></script>
+    </main>
+    
+</body>
+</html>
