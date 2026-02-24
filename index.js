@@ -33,6 +33,8 @@ document.getElementById('btn-interview').addEventListener('click',function(){
      interview.classList.remove('hidden');
      rejected.classList.add('hidden');
      renderInterview();
+
+     
     
      
 })
@@ -42,6 +44,11 @@ document.getElementById('btn-rejected').addEventListener('click',function(){
      interview.classList.add('hidden');
      rejected.classList.remove('hidden');
      renderRejected();
+
+     
+    
+
+  
      
      
 })
@@ -141,6 +148,8 @@ let rejectedSection=document.getElementById('rejected');
 
          }
 
+
+         
           
            
 
@@ -187,8 +196,7 @@ let interviewSection=document.getElementById('interview');
             return;
         }
 
-           
-            
+      
              
 
      for(let interview of interviewList){
@@ -230,6 +238,8 @@ let interviewSection=document.getElementById('interview');
       
       this.closest(".cards").remove();
        totalCalculate();
+       
+
     });
     
 
