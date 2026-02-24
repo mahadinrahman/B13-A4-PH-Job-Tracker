@@ -221,3 +221,13 @@ let interviewSection=document.getElementById('interview');
      }
 }
 
+
+
+//   const deleteButtons = document.querySelectorAll(".delete-btn");
+
+//   deleteButtons.forEach(btn => {
+//     btn.addEventListener("click", function () {
+//       // পুরো job card remove হবে
+//       this.closest(".job-card").remove();
+//     });
+//   });
