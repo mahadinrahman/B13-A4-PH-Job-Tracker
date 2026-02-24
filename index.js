@@ -223,11 +223,15 @@ let interviewSection=document.getElementById('interview');
 
 
 
-//   const deleteButtons = document.querySelectorAll(".delete-btn");
+  const deleteButtons = document.querySelectorAll(".delete");
 
-//   deleteButtons.forEach(btn => {
-//     btn.addEventListener("click", function () {
-//       // পুরো job card remove হবে
-//       this.closest(".job-card").remove();
-//     });
-//   });
+  deleteButtons.forEach(btn => {
+    btn.addEventListener("click", function () {
+      
+      this.closest(".cards").remove();
+       totalCalculate();
+    });
+    
+
+  });
+
