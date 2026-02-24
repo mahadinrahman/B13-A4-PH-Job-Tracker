@@ -13,8 +13,8 @@ function totalCalculate(){
    totalCount.innerText=allcards.children.length;
    interviewCount.innerText=interviewList.length;
    rejectedCount.innerText= rejectedList.length;
-    checkingCount.innerText=allcards.children.length;
-   
+   checkingCount.innerText=allcards.children.length;
+    
 
 }
 totalCalculate();
@@ -23,6 +23,7 @@ document.getElementById('btn-all').addEventListener('click',function(){
      allcards.classList.remove('hidden');
      interview.classList.add('hidden');
      rejected.classList.add('hidden');
+     
     
 })
 
@@ -32,6 +33,7 @@ document.getElementById('btn-interview').addEventListener('click',function(){
      interview.classList.remove('hidden');
      rejected.classList.add('hidden');
      renderInterview();
+    
      
 })
 document.getElementById('btn-rejected').addEventListener('click',function(){
@@ -40,6 +42,7 @@ document.getElementById('btn-rejected').addEventListener('click',function(){
      interview.classList.add('hidden');
      rejected.classList.remove('hidden');
      renderRejected();
+     
      
 })
 
@@ -126,15 +129,24 @@ document.querySelector('main').addEventListener('click',function(event){
 
 let rejectedSection=document.getElementById('rejected');
      function renderRejected(){
+       rejectedSection.innerHTML='';
+
+         if(rejectedList.length===0){
         rejectedSection.innerHTML=`<div class="bg-white p-20 mb-3 ">
             <img class="mx-auto mb-3" src="./jobs.png" alt="">
             <h2 class="text-3xl font-bold text-center">No jobs available</h2>
             <p class="text-center text-gray-500 mt-1">Check back soon for new job oppourunities</p>
             </div>`;
-             
+            return;
+
+         }
+
+          
+           
 
      for(let rejected of rejectedList){
           let div=document.createElement('div');
+
 
           div.innerHTML=`
             <div  class=" bg-white p-6 flex justify-between mb-5">
@@ -164,16 +176,24 @@ let rejectedSection=document.getElementById('rejected');
 }
 let interviewSection=document.getElementById('interview');
      function renderInterview(){
+        interviewSection.innerHTML='';
+
+        if(interviewList.length===0){
         interviewSection.innerHTML=`<div class="bg-white p-20 mb-3 ">
             <img class="mx-auto mb-3" src="./jobs.png" alt="">
             <h2 class="text-3xl font-bold text-center">No jobs available</h2>
             <p class="text-center text-gray-500 mt-1">Check back soon for new job oppourunities</p>
             </div>`;
+            return;
+        }
+
+           
             
              
 
      for(let interview of interviewList){
           let div=document.createElement('div');
+
           div.innerHTML=`
             <div  class=" bg-white p-6 flex justify-between mb-6">
                 <div >
@@ -200,3 +220,4 @@ let interviewSection=document.getElementById('interview');
 
      }
 }
+
