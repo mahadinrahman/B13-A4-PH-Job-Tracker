@@ -34,6 +34,8 @@ document.getElementById('btn-interview').addEventListener('click',function(){
      rejected.classList.add('hidden');
      renderInterview();
 
+    
+
      
     
      
@@ -148,12 +150,10 @@ let rejectedSection=document.getElementById('rejected');
 
          }
 
-
-         
           
-           
 
-     for(let rejected of rejectedList){
+
+         for(let rejected of rejectedList){
           let div=document.createElement('div');
 
 
@@ -196,6 +196,7 @@ let interviewSection=document.getElementById('interview');
             return;
         }
 
+       
       
              
 
@@ -244,4 +245,6 @@ let interviewSection=document.getElementById('interview');
     
 
   });
+
+  
 
