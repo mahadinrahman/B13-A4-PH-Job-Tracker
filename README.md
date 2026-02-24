@@ -52,5 +52,14 @@ why is it useful?
 **less repetition,easier maintenance
 
 5. What is the difference between preventDefault() and stopPropagation() methods?
+>>>>>>>>>>>
+
+**preventDefault()**
+stops the default behavior of an element.
+
+**stopPropagation()**
+stops the event from bubbling up the DOM tree.
+
+
 
 
