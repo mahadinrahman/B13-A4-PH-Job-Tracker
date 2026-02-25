@@ -17,6 +17,13 @@
         *{
            font-family: "Geist", sans-serif;
         }
+
+        .active {
+  background-color:darkblue;
+  color: white;
+}
+
+
     </style>
 </head>
 <body class=" bg-base-200">
@@ -45,10 +52,11 @@
             <div class="flex justify-between">
             <div>
             <h2 class="text-3xl font-bold mb-5">Available Jobs</h2>
-            
-               <button id="btn-all" class="btn btn-primary btn-soft ">All</button>
-               <button id="btn-interview" class="btn btn-primary btn-soft">Interview</button>
-               <button id="btn-rejected" class="btn btn-primary btn-soft">Rejected</button>
+               
+               <button id="btn-all" class="btn  toggle-btn">All</button>
+               <button id="btn-interview" class="btn toggle-btn">Interview</button>
+               <button id="btn-rejected" class="btn toggle-btn">Rejected</button>
+               
             </div>
             <p class="font-medium"><span id="checking-number" class="font-medium">0</span> jobs</p>
             </div>
