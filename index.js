@@ -13,18 +13,19 @@ function totalCalculate(){
    totalCount.innerText=allcards.children.length;
    interviewCount.innerText=interviewList.length;
    rejectedCount.innerText= rejectedList.length;
-   checkingCount.innerText=allcards.children.length;
-    
-
+    checkingCount.innerText=allcards.children.length;
+   
 }
+
 totalCalculate();
 
 document.getElementById('btn-all').addEventListener('click',function(){
      allcards.classList.remove('hidden');
      interview.classList.add('hidden');
      rejected.classList.add('hidden');
-     
+     checkingCount.innerText=allcards.children.length;
     
+     
 })
 
 document.getElementById('btn-interview').addEventListener('click',function(){
@@ -33,26 +34,18 @@ document.getElementById('btn-interview').addEventListener('click',function(){
      interview.classList.remove('hidden');
      rejected.classList.add('hidden');
      renderInterview();
-
+     checkingCount.innerText=interviewList.length;
     
-
-     
-    
-     
 })
+
 document.getElementById('btn-rejected').addEventListener('click',function(){
  
      allcards.classList.add('hidden');
      interview.classList.add('hidden');
      rejected.classList.remove('hidden');
      renderRejected();
+     checkingCount.innerText=rejectedList.length;
 
-     
-    
-
-  
-     
-     
 })
 
 document.querySelector('main').addEventListener('click',function(event){
@@ -92,6 +85,7 @@ document.querySelector('main').addEventListener('click',function(event){
           renderRejected();
          }
          totalCalculate();
+         
          
         
      }
