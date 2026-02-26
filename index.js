@@ -13,17 +13,21 @@ function totalCalculate(){
    totalCount.innerText=allcards.children.length;
    interviewCount.innerText=interviewList.length;
    rejectedCount.innerText= rejectedList.length;
-    checkingCount.innerText=allcards.children.length;
-   
+   checkingCount.innerText=allcards.children.length;
+
+    
 }
 
 totalCalculate();
+
+
 
 document.getElementById('btn-all').addEventListener('click',function(){
      allcards.classList.remove('hidden');
      interview.classList.add('hidden');
      rejected.classList.add('hidden');
      checkingCount.innerText=allcards.children.length;
+     
     
      
 })
@@ -35,6 +39,7 @@ document.getElementById('btn-interview').addEventListener('click',function(){
      rejected.classList.add('hidden');
      renderInterview();
      checkingCount.innerText=interviewList.length;
+     
     
 })
 
@@ -84,11 +89,18 @@ document.querySelector('main').addEventListener('click',function(event){
          if(currentStatus='rejected-btn'){
           renderRejected();
          }
-         totalCalculate();
-         
-         
+
+        totalCalculate();
         
-     }
+        if(currentStatus='btn-rejected'){
+        
+        checkingCount.innerText=rejectedList.length;
+        }
+              
+        
+         
+         
+}
      else if(event.target.classList.contains('rejected-btn')){
           
          const parentNode= event.target.parentNode.parentNode;
@@ -122,11 +134,18 @@ document.querySelector('main').addEventListener('click',function(event){
 
          if(currentStatus='interview-btn'){
           renderInterview();
+          
          }
-         totalCalculate();
          
+        totalCalculate();
+       
+        if(currentStatus='btn-interview'){
+        checkingCount.innerText=interviewList.length;
+        }
         
-     }
+        
+         
+        }
 
 });
 
@@ -241,6 +260,8 @@ let interviewSection=document.getElementById('interview');
   });
 
   const buttons=document.querySelectorAll('.toggle-btn');
+
+  buttons[0].classList.add('active');
 
   buttons.forEach(button=>{
     button.addEventListener('click',function(){
